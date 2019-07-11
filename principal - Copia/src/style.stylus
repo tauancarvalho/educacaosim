@@ -1,0 +1,88 @@
+*
+	box-sizing border-box
+
+body
+	font-family sans-serif
+	background #eee
+	overflow-x hidden
+
+.container
+	max-width 1280px
+	margin auto
+	
+.timeline
+	display block
+	position relative
+	&:before
+		content: ''
+		position: absolute
+		height 100%
+		width 160px
+		background white
+		left 50%
+		transform translateX(-50%)
+
+.title
+	font-size 24px
+	border-top 1px solid lightgray
+	padding 16px
+	Line-height 32px
+
+.source
+	font-size 20px
+	padding 20px
+
+	
+.button
+	display inline-block
+	padding 4px 20px
+	background black
+	color white
+	text-decoration none
+	border 1px solid gray
+	margin 16px
+
+.highlight
+	display flex
+	background white
+	border 1px solid lightgray
+	.left
+		width 31.25%
+	.date
+		display inline-block
+		padding 8px
+		background lightgray
+	.day
+		font-size 80px
+	.month
+		text-transform  uppercase
+		text-align right
+	.right
+		width 68.75%
+	.image
+		display block
+		width 100%
+	
+.stickyDate
+	position sticky
+	top 0
+	z-index 1
+	background white
+	font-size 50px
+	width 160px
+	margin auto
+	word-break break-all
+	text-transform uppercase
+	text-align right
+	padding 16px
+
+.article
+	width calc(50% - 80px)
+	background white
+	border 1px solid lightgray
+	&.even
+		margin-left calc(50% + 80px)
+	.image
+		display block
+		width 100%
+		
