@@ -1,0 +1,565 @@
+//------------------------------------------------------
+// Data
+//------------------------------------------------------
+-
+	const articles = [
+		{
+			title: "Ministro da educação defende ensino superior privado em abertura de congresso do setor em BH",
+			image: "https://s2.glbimg.com/8rpYEmZhXfULB3emUkE1Pn8Xtj4=/0x0:1280x960/1600x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/a/e/Y8BXFhTrCjJ2R8XJKqMg/ministroeducacao.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/mg/minas-gerais/noticia/2019/06/06/ministro-da-educacao-defende-ensino-superior-privado-em-abertura-de-congresso-do-setor-em-bh.ghtml",
+			date: "06/06/2019"
+		},
+		{
+			title: "Propostas para a educação: o que já foi feito pelo governo Bolsonaro?",
+			image: "https://uploads.metropoles.com/wp-content/uploads/2018/03/08083308/Ministerio-da-educac%CC%A7a%CC%83o-010316-RF_009-840x560.jpg",
+			source: "Metrópoles",
+			keyword: "Educação",
+			url: "https://www.metropoles.com/brasil/propostas-para-a-educacao-o-que-ja-foi-feito-pelo-governo-bolsonaro",
+			date: "06/06/2019"
+		},
+		{
+			title: "Propostas para a educação: o que já foi feito pelo governo Bolsonaro?",
+			image: "https://img.estadao.com.br/resources/jpg/2/3/1559759123732.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://politica.estadao.com.br/noticias/geral,propostas-para-a-educacao-o-que-ja-foi-feito-pelo-governo-bolsonaro,70002857514",
+			date: "06/06/2019"
+		},
+		// ------- 06/06^-----
+		{
+			title: "Diretor de Avaliação da Educação Básica do Inep é exonerado",
+			image: "http://portal.inep.gov.br/image/journal/article?img_id=600174&t=1484600774876",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/educacao/noticia/2019/06/05/diretor-de-avaliacao-da-educacao-basica-do-inep-e-exonerado.ghtml",
+			date: "05/06/2019"
+		},
+		{
+			title: "Estudantes e professores mostram a realidade da educação no Brasil",
+			image: "https://s2.glbimg.com/QmLhdvupVETSiDT_vzQ9q8bzlYw=/0x0:1280x451/3200x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/m/2/AvLepKSO2gSex9CoXpYg/banner-profissao-reporter.jpeg",
+			source: "Profissão Repórter",
+			keyword: "Educação",
+			url: "https://g1.globo.com/profissao-reporter/noticia/2019/06/06/estudantes-e-professores-mostram-a-realidade-da-educacao-no-brasil.ghtml",
+			date: "05/06/2019"
+		},
+		{
+			title: "Campinas estuda corte de verbas para 'cumprir obrigações' e cogita incluir áreas da Saúde e Educação",
+			image: "https://s2.glbimg.com/8ojaPPuTPBj9H4W6B8Zgsy8se5M=/0x0:2048x1261/2000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/3/o/ykh0XRTk2hAVZ81WmF3w/42224364824-6a5e595dc1-k.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/sp/campinas-regiao/noticia/2019/06/05/campinas-estuda-corte-de-verbas-para-cumprir-obrigacoes-e-cogita-incluir-areas-da-saude-e-educacao.ghtml",
+			date: "05/06/2019"
+		},
+		{
+			title: "Mais 2.724 bolsas cortadas na Capes",
+			image: "https://horadopovo.org.br/wp-content/uploads/2019/05/Capes-MEC.jpg",
+			source: "BR18",
+			keyword: "Educação",
+			url: "https://br18.com.br/mais-2-724-bolsas-cortadas-na-capes/",
+			date: "05/06/2019"
+		},
+		// ------- 05/06^-----
+		{
+			title: "Ex-ministros da Educação lançam carta em defesa das políticas de ensino do país, da autonomia universitária e da igualdade de acesso",
+			image: "https://s2.glbimg.com/D38r14siALzsyGL_JoWJZ1NfupE=/0x0:4200x2800/2000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/k/u/mei7T2QeekZoxfNeIk3Q/ministros.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/educacao/noticia/2019/06/04/ex-ministros-da-educacao-lancam-carta-em-defesa-das-politicas-de-ensino-do-pais-e-da-autonomia-universitaria.ghtml",
+			date: "04/06/2019"
+		},
+		{
+			title: "Gasto com pessoal nos estados cresce e faltarão recursos para saúde e educação, diz Guedes",
+			image: "https://s01.video.glbimg.com/x720/7667888.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/politica/noticia/2019/06/04/gasto-com-pessoal-nos-estados-cresce-e-faltarao-recursos-para-saude-e-educacao-diz-guedes.ghtml",
+			date: "04/06/2019"
+		},
+		{
+			title: "Bolsas de pesquisa bloqueadas pela Capes chegam a 6,1 mil",
+			image: "https://horadopovo.org.br/wp-content/uploads/2019/05/Capes-MEC.jpg",
+			source: "BR18",
+			keyword: "Educação",
+			url: "https://br18.com.br/bolsas-de-pesquisa-bloqueadas-pela-capes-chegam-a-61-mil/",
+			date: "04/06/2019"
+		},
+		{
+			title: "Capes bloqueia mais 2,7 mil bolsas de pesquisa",
+			image: "https://img.estadao.com.br/resources/jpg/4/7/1557956013674.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://educacao.estadao.com.br/noticias/geral,capes-bloqueia-mais-2-7-mil-bolsas-de-pesquisa,70002856105",
+			date: "04/06/2019"
+		},
+		// ------- 04/06^-----
+		{
+			title: "Corte ou contingenciamento, quem está certo na guerra de narrativas da educação?",
+			image: "https://ep01.epimg.net/brasil/imagenes/2019/05/31/politica/1559334689_188552_1559334964_noticia_normal_recorte1.jpg",
+			source: "El País",
+			keyword: "Educação",
+			url: "https://brasil.elpais.com/brasil/2019/05/31/politica/1559334689_188552.html",
+			date: "02/06/2019"
+		},
+		// ------- 02/06^-----
+		{
+			title: "Políticos e estudantes criticam declarações do Ministro da Educação",
+			image: "https://s04.video.glbimg.com/x720/7657227.jpg",
+			source: "Bom dia Brasil",
+			keyword: "Educação",
+			url: "https://globoplay.globo.com/v/7657227/",
+			date: "31/05/2019"
+		},
+		{
+			title: "Saúde tem R$ 11 milhões contingenciados; Educação também é afetada",
+			image: "https://s2.glbimg.com/S2l5NlqncJpGIOh9WvarGwEYKPY=/0x0:1280x851/2000x0/smart/filters:strip_icc()/s.glbimg.com/jo/g1/f/original/2017/06/01/sesau-1.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/to/tocantins/noticia/2019/05/31/saude-tem-r-11-milhoes-contingenciados-educacao-tambem-e-afetada.ghtml",
+			date: "31/05/2019"
+		},
+		{
+			title: "Protestos em defesa da educação são realizados em 126 cidades",
+			image: "https://i.correiobraziliense.com.br/Rxi0APaklKW2r522SN_Ey8ffZhY=/820x0/smart/imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/31/758942/20190530235808350507o.JPG",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/05/31/interna-brasil,758942/protestos-em-defesa-da-educacao-desta-quinta.shtml",
+			date: "31/05/2019"
+		},
+		// ------- 31/05^-----
+		{
+			title: "MPF processa ministro da Educação por sugerir a universidades federais do RN substituir terceirizados por alunos",
+			image: "https://s2.glbimg.com/Wyq9xGZqInObnf6NLKgY3Yf7I1I=/0x0:1700x1065/2000x0/smart/filters:strip_icc()/s.glbimg.com/jo/g1/f/original/2019/04/10/ministro-da-educacao.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/rn/rio-grande-do-norte/noticia/2019/05/30/mpf-processa-ministro-da-educacao-por-sugerir-a-universidades-federais-do-rn-substituir-terceirizados-por-alunos.ghtml",
+			date: "30/05/2019"
+		},
+		{
+			title: "Conselho Nacional dos Direitos Humanos recomenda revisão de bloqueios na educação",
+			image: "https://i1.wp.com/www.apostagem.com.br/wp-content/uploads/2018/08/DSC06152.jpg?resize=800%2C445&ssl=1",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/educacao/noticia/2019/05/30/conselho-nacional-dos-direitos-humanos-recomenda-revisao-de-bloqueios-na-educacao.ghtml",
+			date: "30/05/2019"
+		},
+		{
+			title: "Procuradoria pede ao MEC dados sobre bloqueio de verbas para o Museu Nacional",
+			image: "https://outraspalavras.net/ojoioeotrigo/wp-content/uploads/2019/02/mpf-bras%C3%ADlia-e1550683504768.jpg",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/05/30/interna-brasil,758873/procuradoria-pede-ao-mec-dados-sobre-bloqueio-de-verbas-para-o-museu-n.shtml",
+			date: "30/05/2019"
+		},
+		{
+			title: "Bloqueio de verbas na Educação pode afetar reconstrução do Museu Nacional",
+			image: "https://img.estadao.com.br/resources/jpg/3/0/1554936287703.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://brasil.estadao.com.br/noticias/rio-de-janeiro,bloqueio-de-verbas-na-educacao-podem-afetar-reconstrucao-do-museu-nacional,70002849230",
+			date: "30/05/2019"
+		},
+			// ------- 30/05^-----
+		{
+			title: "Governo de MT diz que vai cortar ponto de servidores da educação durante greve",
+			image: "https://s2.glbimg.com/QFVjgbsj7U7tZDgPJI4iw0stD68=/0x0:960x640/3200x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/i/K/R01OyyQUGQbv0dBJqnqQ/61373567-2696080553739516-7149095410630393856-n.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/mt/mato-grosso/noticia/2019/05/28/governo-de-mt-diz-que-vai-cortar-ponto-de-servidores-da-educacao-durante-greve.ghtml",
+			date: "28/05/2019"
+		},
+		{
+			title: "Plano Nacional de Educação está com 80% das metas estagnadas, diz estudo",
+			image: "https://s2.glbimg.com/yPqIbTKO0kkWf7VtYaasYXE2Qe8=/0x0:4839x3012/3200x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/X/0/C9cxzcQKaOMu83JBGbyQ/neonbrand-426918-unsplash.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/educacao/noticia/2019/05/27/plano-nacional-de-educacao-esta-com-80percent-das-metas-estagnadas-diz-estudo.ghtml",
+			date: "27/05/2019"
+		},
+		{
+			title: "Novo bloqueio no Orçamento deve ser inferior a R$ 5 bilhões",
+			image: "https://img.estadao.com.br/resources/jpg/5/2/1557968353925.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://economia.estadao.com.br/noticias/geral,novo-bloqueio-no-orcamento-deve-ser-inferior-a-r-5-bilhoes,70002836927",
+			date: "21/05/2019"
+		},
+		{
+			title: "Bolsonaro quer que multa de R$ 2,5 bi da Petrobras vá para a Educação",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/17/755538/20190517105840128129u.jpg",
+			source: "Eu estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/05/17/ensino_educacaobasica_interna,755538/bolsonaro-quer-que-multa-de-r-2-5-bi-da-petrobras-va-para-a-educacao.shtml",
+			date: "17/05/2019"
+		},
+		// ------- 17/05^-----
+		{
+			title: "Reitores de universidades federais se reúnem com ministro da Educação",
+			image: "https://s01.video.glbimg.com/x720/7621604.jpg",
+			source: "Jornal Nacional",
+			keyword: "Educação",
+			url: "https://g1.globo.com/jornal-nacional/noticia/2019/05/16/reitores-de-universidades-federais-se-reunem-com-ministro-da-educacao.ghtml",
+			date: "16/05/2019"
+		},
+		{
+			title: "Bolsonaro diz que corte de verbas da Educação foi necessário",
+			image: "https://jornaldebrasilia.com.br/wp-content/uploads/2019/05/bolsonaro-2-1.jpg",
+			source: "Hora1",
+			keyword: "Educação",
+			url: "https://globoplay.globo.com/v/7618950/",
+			date: "16/05/2019"
+		},
+		// ------- 16/05^-----
+		{
+			title: "Procuradoria diz que bloqueio de recursos da educação é inconstitucional",
+			image: "https://uploads.metropoles.com/wp-content/uploads/2019/06/06182421/MPF-PGR.jpg",
+			source: "G1",
+			keyword: "Educação",
+			url: "https://g1.globo.com/politica/noticia/2019/05/15/procuradoria-diz-que-bloqueio-de-recursos-da-educacao-e-inconstitucional.ghtml",
+			date: "15/05/2019"
+		},
+		{
+			title: "Corte na Educação Superior da Paraíba",
+			image: "http://s02.video.glbimg.com/x720/7590541.jpg",
+			source: "JPB Primeira Edição",
+			keyword: "Educação",
+			url: "https://globoplay.globo.com/v/7590541/",
+			date: "15/05/2019"
+		},
+		{
+			title: "Houve confusão do que é contingenciamento e do que é corte, diz Onyx",
+			image: "https://i.correiobraziliense.com.br/ON4GOFtI56QZl6N-EgpMbvaFLzc=/820x0/smart/imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/15/755139/20190515162540885625a.jpg",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/05/15/interna-brasil,755139/houve-confusao-do-que-e-contingenciamento-e-do-que-e-corte-diz-onyx.shtml",
+			date: "15/05/2019"
+		},
+		{
+			title: "Bloqueio de recursos na Educação é o maior desde 2016",
+			image: "https://uploads.metropoles.com/wp-content/uploads/2019/05/15165954/Weintraub-8.jpeg",
+			source: "Metrópoles",
+			keyword: "Educação",
+			url: "https://www.metropoles.com/brasil/educacao-br/bloqueio-de-recursos-na-educacao-e-o-maior-desde-2016",
+			date: "15/05/2019"
+		},
+		{
+			title: "Bolsonaro xinga ativistas de ‘idiotas’, Weintraub vai à Câmara e BC indica recuo do PIB",
+			image: "https://brasil.estadao.com.br/blogs/estadao-podcasts/wp-content/uploads/sites/633/2019/05/bolsonaro-dallas.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://brasil.estadao.com.br/blogs/estadao-podcasts/expresso-bolsonaro-xinga-ativistas-de-idiotas-weintraub-vai-a-camara-e-bc-indica-recuo-do-pib/",
+			date: "15/05/2019"
+		},
+		// ------- 15/05^-----
+		{
+			title: "Cortes sucessivos de verbas provocam autoexílio de cientistas no exterior",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/14/754856/20190514120854765326e.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_ensinosuperior/2019/05/14/ensino_ensinosuperior_interna,754856/cortes-sucessivos-de-verbas-provocam-autoexilio-de-cientistas-no-exter.shtml",
+			date: "14/05/2019"
+		},
+		{
+			title: "MEC abandona pacto de direitos humanos que envolve 333 instituições",
+			image: "https://uploads.metropoles.com/wp-content/uploads/2017/11/20152447/Ministerio-da-educac%CC%A7a%CC%83o-010316-RF_009-840x560.jpg",
+			source: "Metrópoles",
+			keyword: "Educação",
+			url: "https://www.metropoles.com/brasil/educacao-br/mec-abandona-pacto-de-direitos-humanos-que-envolve-333-instituicoes",
+			date: "14/05/2019"
+		},
+		{
+			title: "Weintraub chama universidades de ‘torres de marfim’",
+			image: "https://statig2.akamaized.net/bancodeimagens/2m/p7/l9/2mp7l9jt4js2t1vphsrjczy3y.jpg",
+			source: "BR18",
+			keyword: "Educação",
+			url: "https://br18.com.br/weintraub-chama-universidades-de-torres-de-marfim/",
+			date: "14/05/2019"
+		},
+		// ------- 14/05^-----
+		{
+			title: "Ministro compara verba de universidades com 'chocolatinhos' e erra cálculo",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/10/754228/20190510094559669361a.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_ensinosuperior/2019/05/10/ensino_ensinosuperior_interna,754228/ministro-compara-verba-universidades-com-chocolatinhos-e-erra-calculo.shtml",
+			date: "10/05/2019"
+		},
+		// ------- 10/05^-----
+		{
+			title: "Ministro compara verba para Educação com 'chocolatinhos'",
+			image: "https://img.estadao.com.br/resources/jpg/1/6/1557455673561.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://educacao.estadao.com.br/noticias/geral,ministro-compara-verba-para-educacao-com-chocolatinhos,70002822945",
+			date: "09/05/2019"
+		},{
+			title: "Governo paralisa bolsas de pesquisas",
+			image: "https://movimentorevista.com.br/wp-content/uploads/2018/08/capes-485x255.jpg",
+			source: "BR18",
+			keyword: "Educação",
+			url: "https://br18.com.br/governo-paralisa-bolsas-de-pesquisas/",
+			date: "09/05/2019"
+		},
+		// ------- 09/05^-----
+		{
+			title: "USP, Unesp e Unicamp sofrem corte de bolsas de mestrado e doutorado 'ociosas' por 15 dias",
+			image: "https://img.estadao.com.br/resources/jpg/3/9/1547526365893.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://educacao.estadao.com.br/noticias/geral,usp-e-unicamp-dizem-ter-tido-corte-de-bolsas-ociosas-por-15-dias,70002821255",
+			date: "08/05/2019"
+		},
+		{
+			title: "Mestrado e doutorado asfixiados",
+			image: "https://correio-cdn1.cworks.cloud/fileadmin/_processed_/0/7/csm_capes_REP_ff7dc3cdfc.jpg",
+			source: "BR18",
+			keyword: "Educação",
+			url: "https://br18.com.br/mestrado-e-doutorado-asfixiados/",
+			date: "06/05/2019"
+		},
+		{
+			title: "Bloqueio do MEC atinge mestrado e doutorado",
+			image: "https://img.estadao.com.br/resources/jpg/1/3/1556890676831.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://educacao.estadao.com.br/noticias/geral,bloqueio-do-mec-atinge-mestrado-e-doutorado,70002817112",
+			date: "05/05/2019"
+		},
+		// ------- 05/05^-----
+		{
+			title: "MEC contraria discurso e congela verba da educação básica, além das faculdades",
+			image: "https://i.correiobraziliense.com.br/IxawQKBhrrRVZ_b9qaLYwM3sOWo=/820x0/smart/imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/04/753102/20190504121024227710o.JPG",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/05/04/interna-brasil,753102/governo-bolsonaro-corta-verbas-de-educacao.shtml",
+			date: "04/05/2019"
+		},
+		{
+			title: "Bloqueio das universidades federais chega a R$ 2,2 bilhões",
+			image: "https://i.correiobraziliense.com.br/bmRcP2wc7xchlAt9A6WLlHSTy4k=/820x0/smart/imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/04/753071/20190504104850832400u.JPG",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/05/04/interna-brasil,753071/bloqueio-das-universidades-federais-chega-a-r-2-2-bilhoes.shtml",
+			date: "04/05/2019"
+		},
+		// ------- 04/05^-----
+		{
+			title: "MEC avaliará alfabetização do 2º ano do ensino fundamental por amostragem",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/02/752710/20190502110940354234o.jpeg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/05/02/ensino_educacaobasica_interna,752710/mec-avaliara-alunos-do-2-ano-do-ensino-fundamental-pela-primeira-vez.shtml",
+			date: "02/05/2019"
+		},
+		{
+			title: "DCE da UnB protocola petição contra corte de verbas anunciado pelo MEC",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/05/01/752612/20190501181458921711a.JPG",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_ensinosuperior/2019/05/01/ensino_ensinosuperior_interna,752612/dce-da-unb-protocola-peticao-contra-corte-de-verbas-anunciado-pelo-mec.shtml",
+			date: "01/05/2019"
+		},
+		// ------- 01/05^-----
+		{
+			title: "MEC mira universidades por 'balbúrdia' e corta 30% de verba da UnB",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/04/30/752333/20190430095151432494a.JPG",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_ensinosuperior/2019/04/30/ensino_ensinosuperior_interna,752333/mec-mira-universidades-por-balburdia-e-corta-30-de-verba-da-unb.shtml",
+			date: "30/04/2019"
+		},
+		{
+			title: "MEC diz que cortará verba de universidade que promover balbúrdia",
+			image: "http://p2.trrsf.com/image/fget/cf/thumbox-ttv.terra.com/video/5cc8edb9bd088d500774c4f0.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://tv.estadao.com.br/politica,mec-diz-que-cortara-verba-de-universidade-que-promover-balburdia,992746",
+			date: "30/04/2019"
+		},
+		{
+			title: "MEC cortará verba de universidade por 'balbúrdia' e já enquadra UnB, UFF e UFBA",
+			image: "https://img.estadao.com.br/resources/jpg/6/5/1556588844056.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://educacao.estadao.com.br/noticias/geral,mec-cortara-verba-de-universidade-por-balburdia-e-ja-mira-unb-uff-e-ufba,70002809579",
+			date: "30/04/2019"
+		},
+		// ------- 30/04^-----
+		{
+			title: "Bolsonaro diz que MEC estuda tirar dinheiro de áreas de humanas",
+			image: "https://img.estadao.com.br/resources/jpg/3/3/1556234110433.jpg",
+			source: "Estadão",
+			keyword: "Educação",
+			url: "https://educacao.estadao.com.br/blogs/blog-renata-cafardo/bolsonaro-diz-que-mec-estuda-tirar-dinheiro-de-areas-de-humanas/",
+			date: "26/04/2019"
+		},
+		{
+			title: "Governo faz novas mudanças no MEC e 'número dois' é outra vez demitido",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/04/18/750367/20190418173349271595a.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/04/18/ensino_educacaobasica_interna,750367/governo-faz-novas-mudancas-no-mec-e-numero-dois-e-outra-vez-demitido.shtml",
+			date: "18/04/2019"
+		},
+		{
+			title: "MEC anuncia novo presidente do Inep ",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/04/16/749806/20190416121812793673i.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/04/16/ensino_educacaobasica_interna,749806/mec-anuncia-novo-presidente-do-inep.shtml",
+			date: "16/04/2019"
+		},
+		{
+			title: "Deputados formam frente parlamentar que defende ensino militar no Brasil",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/04/09/748476/20190409172806148905u.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/04/09/ensino_educacaobasica_interna,748476/deputados-formam-frente-parlamentar-que-defende-ensino-militar.shtml",
+			date: "09/04/2019"
+		},
+		{
+			title: "Ministro quer mudar livros didáticos para alterar visão da ditadura militar",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/04/03/747286/20190403201535961309a.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/04/03/ensino_educacaobasica_interna,747286/ministro-quer-mudar-livros-didaticos-para-mudar-visao-da-ditadura-mili.shtml",
+			date: "03/04/2019"
+		},
+		// ------- 03/04^-----
+		{
+			title: "Em menos de três meses, ministro da Educação demitiu 91 gestores",
+			image: "https://uploads.metropoles.com/wp-content/uploads/2019/03/29211129/velez-abre.jpg",
+			source: "Metrópoles",
+			keyword: "Educação",
+			url: "https://www.metropoles.com/brasil/em-menos-de-tres-meses-ministro-da-educacao-demitiu-91-gestores",
+			date: "30/03/2019"
+		},
+		{
+			title: "Educação teve o maior corte de recursos na “tesourada” do governo",
+			image: "https://uploads.metropoles.com/wp-content/uploads/2016/08/17082306/Ministerio-da-educac%CC%A7a%CC%83o-010316-RF_005.jpg",
+			source: "Metrópoles",
+			keyword: "Educação",
+			url: "https://www.metropoles.com/brasil/economia-br/educacao-teve-o-maior-corte-de-recursos-na-tesourada-do-governo",
+			date: "29/03/2019"
+		},
+		{
+			title: "MEC fica à deriva após seis recuos e 15 exonerações",
+			image: "https://i.correiobraziliense.com.br/apVlJCAOM2UeS_UI0bH2Po7PsZk=/820x0/smart/imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/03/27/745637/20190327150256581085u.JPG",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/03/27/interna-brasil,745637/mec-fica-a-deriva-apos-seis-recuos-e-15-exoneracoes.shtml",
+			date: "27/03/2019"
+		},
+		{
+			title: "MEC não vai avaliar alfabetização dos estudantes brasileiros este ano",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/03/25/745146/20190325134809194055i.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/03/25/ensino_educacaobasica_interna,745146/mec-nao-vai-avaliar-alfabetizacao-dos-estudantes-brasileiros-este-ano.shtml",
+			date: "25/03/2019"
+		},
+		{
+			title: "Comissão do Enem vai identificar questões com 'teor ofensivo a tradições'",
+			image: "https://i.correiobraziliense.com.br/WRI0Ac4laiskqfZNr2FLvJugmFY=/820x0/smart/imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/03/20/744244/20190320194152384757a.JPG",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/03/20/interna-brasil,744244/comissao-do-enem-vai-identificar-questoes-com-teor-ofensivo-a-tradico.shtml",
+			date: "20/03/2019"
+		},
+		{
+			title: "Indicada para nº 2 do MEC defende ensino baseado na 'palavra de Deus'",
+			image: "https://i.correiobraziliense.com.br/qpl62_h_6m2OD6T7MHOvRnN9gjc=/820x0/smart/imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/03/17/743509/20190317123143743165a.jpg",
+			source: "Correio Braziliense",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/brasil/2019/03/17/interna-brasil,743509/indicada-para-n-2-do-mec-defende-ensino-baseado-na-palavra-de-deus.shtml",
+			date: "17/03/2019"
+		},
+		// ------- 17/03^-----
+		{
+			title: "Ministro defende ensino cívico e fala sobre desafios da nova gestão",
+			image: "https://i.ytimg.com/vi/dZLFEIeF3zc/maxresdefault.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/02/05/ensino_educacaobasica_interna,735562/ministro-defende-ensino-civico-e-fala-sobre-desafios-da-nova-gestao.shtml",
+			date: "05/02/2019"
+		},
+		{
+			title: "Ministro da Educação nomeia novos presidentes do FNDE e do Inep sem poder",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/01/15/731050/20190115192228341590a.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/01/15/ensino_educacaobasica_interna,731050/ministro-da-educacao-nomeia-presidentes-do-fnde-e-do-inep-sem-poder.shtml",
+			date: "15/01/2019"
+		},
+		{
+			title: "Presidente do Inep é exonerada. Maria Inês Fini estava no cargo desde 2016",
+			image: "https://imgsapp2.correiobraziliense.com.br/app/noticia_127983242361/2019/01/14/730816/20190114192304660346o.jpg",
+			source: "Eu Estudante",
+			keyword: "Educação",
+			url: "https://www.correiobraziliense.com.br/app/noticia/eu-estudante/ensino_educacaobasica/2019/01/14/ensino_educacaobasica_interna,730816/presidente-do-inep-e-exonerada-maria-ines-fini-estava-no-cargo-desde.shtml",
+			date: "14/01/2019"
+		},
+		{
+			title: "Para futuro ministro da Educação, 1964 é para “lembrar e comemorar”",
+			image: "https://uploads.metropoles.com/wp-content/uploads/2018/11/23120603/WhatsApp-Image-2018-11-23-at-12.03.15.jpeg",
+			source: "Metrópoles",
+			keyword: "Educação",
+			url: "https://www.metropoles.com/brasil/politica-br/para-futuro-ministro-da-educacao-1964-e-para-lembrar-e-comemorar",
+			date: "23/11/2018"
+		},
+	]
+	
+	const [highlight, ...rest] = articles
+	
+	const enhanced = rest.map((x, index) => Object.assign(x, {index}))
+	
+	const grouped = enhanced.reduce((r, v, i, a, k = v.date) => ((r[k] || (r[k] = [])).push(v), r), {})
+	
+	const months = [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ]
+	const convertDate = date => new Date([date.split('/')[1], date.split('/')[0], date.split('/')[2]].join('/'))
+	const getMonth = date => months[convertDate(date).getMonth()]
+-
+
+//------------------------------------------------------
+// Component
+//------------------------------------------------------
+
+mixin highlight({ date, image, title, source, url, index })
+	.highlight
+		.left
+			.date
+				.day=date.split('/')[0]
+				.month=getMonth(date)
+			.title=title
+			.source Fonte: #{source}
+			a.button(href=url) Ver mais
+			
+		.right
+			img.image(src=image)
+
+
+mixin article({ image, title, source, url, index })
+	.article(class=(index%2 && 'even' || 'odd'))
+		img.image(src=image)
+		.title=title
+		.source Fonte: #{source}
+		a.button(href=url) ver mais
+
+//------------------------------------------------------
+// Layout
+//------------------------------------------------------
+
+div.container
+	+highlight(highlight)
+	.timeline
+		each val, index in grouped
+			.stickyDate
+				.day=index.split('/')[0]
+				.month=getMonth(index).slice(0, 3)
+			each data in val
+				+article(data)
+	
+	//- pre.debug=json
+		
+		
